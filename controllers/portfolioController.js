@@ -6,8 +6,7 @@ console.log("API_BREVO:", process.env.API_BREVO);
 const transporter = nodemailer.createTransport(
   new Transport({
     auth: {
-      apikey: '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'
-      ,
+      apikey: process.env.API_BREVO,
     },
   })
 );
