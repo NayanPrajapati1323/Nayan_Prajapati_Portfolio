@@ -112,7 +112,7 @@ const Hero = () => {
             transition={{ delay: 0.6 }}
             style={{ fontSize: 'clamp(1.5rem, 4vw, 3rem)', color: 'var(--text-secondary)', marginBottom: '2.5rem', fontWeight: '500' }}
           >
-            Building digital <span className="text-gradient" style={{ fontWeight: '800' }}>masterpieces</span>.
+            Crafting robust web solutions with <span className="text-gradient" style={{ fontWeight: '800' }}>Laravel & PHP</span>.
           </motion.h2>
 
           <motion.div 

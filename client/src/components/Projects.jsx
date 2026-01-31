@@ -1,38 +1,63 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiGithub, FiExternalLink, FiFolder } from 'react-icons/fi';
 
 const Projects = () => {
+  const [showAll, setShowAll] = useState(false);
+
   const projects = [
     {
-      title: 'E-Commerce Dashboard',
-      description: 'A comprehensive dashboard for managing online stores, featuring real-time data visualization and order management.',
-      tech: ['React', 'Node.js', 'MongoDB', 'Chart.js'],
+      title: 'CSRDigi Dashboard',
+      description: 'A comprehensive dashboard for managing agricultural crops and generating public QR codes. Features role-based access control and efficient data management.',
+      tech: ['Laravel', 'MySQL'],
+      github: '#',
+      external: '#'
+    },
+    {
+      title: 'CSRDigi Website',
+      description: 'The public-facing website for the CSRDigi project, displaying scanned crop details and project information efficiently.',
+      tech: ['Laravel', 'MySQL'],
+      github: '#',
+      external: '#'
+    },
+    {
+      title: 'White Mango Skincare',
+      description: 'An advanced e-commerce platform for skincare products. Includes Google Auth, Email OTP, Payumoney payment, and a dynamic admin dashboard.',
+      tech: ['Laravel', 'MySQL', 'Google Auth', 'Payumoney'],
+      github: '#',
+      external: '#'
+    },
+    {
+      title: 'Workforce Management (WFM)',
+      description: 'A meter management system with CRUD operations and a complex "Old Meter Devolution" module for tracking equipment lifecycle.',
+      tech: ['Laravel', 'Livewire', 'MySQL'],
+      github: '#',
+      external: '#'
+    },
+    {
+      title: 'Employee Management System',
+      description: 'A system to streamline employee records, attendance, and performance tracking within an organization.',
+      tech: ['Laravel', 'MySQL'],
+      github: '#',
+      external: '#'
+    },
+    {
+      title: 'Portfolio Website',
+      description: 'The personal portfolio website you are viewing right now, showcasing my skills and projects with a modern UI.',
+      tech: ['React.js', 'Framer Motion'],
       github: '#',
       external: '#'
     },
     {
       title: 'Task Management App',
-      description: 'A collaborative task management tool that helps teams organize and prioritize their work effectively.',
-      tech: ['React', 'Firebase', 'Redux', 'Material UI'],
+      description: 'A collaborative task tracking tool allowing users to create, assign, and manage daily tasks efficiently.',
+      tech: ['React.js', 'MySQL'],
       github: '#',
       external: '#'
-    },
-    {
-      title: 'Weather Application',
-      description: 'A sleek weather app that provides accurate forecasts and weather conditions for any location worldwide.',
-      tech: ['JavaScript', 'OpenWeather API', 'HTML/CSS'],
-      github: '#',
-      external: '#'
-    },
-    {
-        title: 'Portfolio Website',
-        description: 'A personal portfolio website showcasing skills and projects, built with modern web technologies.',
-        tech: ['React', 'Framer Motion', 'CSS Module'],
-        github: '#',
-        external: '#'
-      }
+    }
   ];
+
+  const visibleProjects = showAll ? projects : projects.slice(0, 3);
 
   const container = {
     hidden: { opacity: 0 },
@@ -67,15 +92,16 @@ const Projects = () => {
 
         <motion.div 
           className="grid-auto-fit"
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
+          layout
         >
-          {projects.map((project, index) => (
+          {visibleProjects.map((project, index) => (
             <motion.div 
-              key={index} 
-              variants={item}
+              key={project.title} 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              layout
               className="glass-card" 
               style={{ padding: '2rem', display: 'flex', flexDirection: 'column', height: '100%', position: 'relative', overflow: 'hidden' }}
             >
@@ -132,9 +158,13 @@ const Projects = () => {
         </motion.div>
 
         <div style={{ textAlign: 'center', marginTop: '4rem' }}>
-            <a href="#" className="btn btn-outline" style={{ padding: '15px 30px' }}>
-                Show More
-            </a>
+            <button 
+                onClick={() => setShowAll(!showAll)}
+                className="btn btn-outline" 
+                style={{ padding: '15px 30px' }}
+            >
+                {showAll ? 'Show Less' : 'Show More'}
+            </button>
         </div>
       </div>
     </section>

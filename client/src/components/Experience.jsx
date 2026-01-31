@@ -6,7 +6,7 @@ const Experience = () => {
   const experiences = [
     {
       company: 'Tech Solutions Inc.',
-      role: 'Senior Full Stack Developer',
+      role: 'Senior Laravel Developer',
       date: '2023 - Present',
       desc: 'Leading a team of developers in building scalable web applications. Implemented CI/CD pipelines and optimized database performance.'
     },

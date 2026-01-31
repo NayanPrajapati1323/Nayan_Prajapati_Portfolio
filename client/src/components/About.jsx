@@ -24,13 +24,13 @@ const About = () => {
                 style={{ fontSize: '1.1rem', lineHeight: '1.8' }}
             >
               <p style={{ marginBottom: '20px', color: 'var(--text-secondary)' }}>
-                Hello! My name is <strong style={{ color: 'var(--text-primary)' }}>Nayan</strong> and I enjoy creating things that live on the internet. My interest in web development started back in 2012 when I decided to try editing custom Tumblr themes — turns out hacking together HTML & CSS was pretty fun!
+                Hello! My name is <strong style={{ color: 'var(--text-primary)' }}>Nayan</strong>. I am a dedicated <strong>Laravel PHP Developer</strong> with a passion for building robust, scalable web applications. My journey into development began with a curiosity for how complex systems work, which evolved into a career building enterprise-grade solutions.
               </p>
               <p style={{ marginBottom: '20px', color: 'var(--text-secondary)' }}>
-                Fast-forward to today, and I’ve had the privilege of working at an <span className="text-gradient" style={{ fontWeight: 'bold' }}>advertising agency</span>, a <span className="text-gradient" style={{ fontWeight: 'bold' }}>start-up</span>, a <span className="text-gradient" style={{ fontWeight: 'bold' }}>huge corporation</span>, and a <span className="text-gradient" style={{ fontWeight: 'bold' }}>student-led design studio</span>.
+                I have extensive experience working on diverse projects, from <span className="text-gradient" style={{ fontWeight: 'bold' }}>Workforce Management Systems</span> and <span className="text-gradient" style={{ fontWeight: 'bold' }}>E-commerce platforms</span> to <span className="text-gradient" style={{ fontWeight: 'bold' }}>custom Dashboards</span>. I thrive on solving complex backend challenges and optimizing database performance.
               </p>
               <p style={{ color: 'var(--text-secondary)' }}>
-                I am passionate about building excellent software that improves the lives of those around me. I specialize in creating software for clients ranging from individuals and small-businesses all the way to large enterprise corporations.
+                My expertise lies in <strong>Laravel, PHP, MySQL, and Livewire</strong>, but I also enjoy working with modern frontend technologies like React.js to create seamless user experiences. I am always eager to tackle new challenges and deliver high-quality code.
               </p>
             </motion.div>
             

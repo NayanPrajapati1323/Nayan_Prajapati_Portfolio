@@ -1,23 +1,27 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { SiJavascript, SiReact, SiNodedotjs, SiMongodb, SiExpress, SiHtml5, SiCss3, SiTailwindcss, SiGit, SiFigma, SiDocker, SiNextdotjs } from 'react-icons/si';
+import { SiJavascript, SiReact, SiNodedotjs, SiMongodb, SiExpress, SiHtml5, SiCss3, SiTailwindcss, SiGit, SiFigma, SiDocker, SiNextdotjs, SiPhp, SiLaravel, SiLivewire, SiMysql, SiGithub } from 'react-icons/si';
 
 import MatrixBackground from './MatrixBackground';
 
 const TechStack = () => {
   const techs = [
-    { name: 'JavaScript', icon: <SiJavascript color="#F7DF1E" /> },
-    { name: 'React', icon: <SiReact color="#61DAFB" /> },
-    { name: 'Node.js', icon: <SiNodedotjs color="#339933" /> },
-    { name: 'Express', icon: <SiExpress color="var(--text-primary)" /> },
-    { name: 'MongoDB', icon: <SiMongodb color="#47A248" /> },
-    { name: 'Next.js', icon: <SiNextdotjs color="var(--text-primary)" /> },
+    //   { name: 'Node.js', icon: <SiNodedotjs color="#339933" /> },
+    //   { name: 'Express', icon: <SiExpress color="var(--text-primary)" /> },
+    //   { name: 'MongoDB', icon: <SiMongodb color="#47A248" /> },
+    //   { name: 'Next.js', icon: <SiNextdotjs color="var(--text-primary)" /> },
+    { name: 'PHP', icon: <SiPhp color="#47A248" />},
+    { name: 'Laravel', icon: <SiLaravel color="#47A248" />},
+    { name: 'Livewire', icon: <SiLivewire color="#47A248" />},
+    { name: 'MySQL', icon: <SiMysql color="#47A248" />},
     { name: 'HTML5', icon: <SiHtml5 color="#E34F26" /> },
     { name: 'CSS3', icon: <SiCss3 color="#1572B6" /> },
     { name: 'Tailwind', icon: <SiTailwindcss color="#06B6D4" /> },
-    { name: 'Git', icon: <SiGit color="#F05032" /> },
+    { name: 'Github', icon: <SiGithub color="#F05032" /> },
     { name: 'Docker', icon: <SiDocker color="#2496ED" /> },
     { name: 'Figma', icon: <SiFigma color="#F24E1E" /> },
+    { name: 'JavaScript', icon: <SiJavascript color="#F7DF1E" /> },
+    { name: 'React', icon: <SiReact color="#61DAFB" /> },
   ];
 
   const container = {

@@ -37,7 +37,7 @@ const Header = () => {
             style={{ fontSize: '1.8rem', fontWeight: '800', color: 'var(--accent-primary)', letterSpacing: '-1px' }}
             whileHover={{ scale: 1.1 }}
         >
-          NP<span style={{ color: 'var(--text-primary)' }}>.</span>
+          NAYAN PRAJAPATI<span style={{ color: 'var(--text-primary)' }}>.</span>
         </motion.a>
 
         {/* Desktop Nav */}
