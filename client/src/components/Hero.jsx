@@ -80,7 +80,7 @@ const Hero = () => {
           >
              <div style={{ width: '100%', height: '100%', borderRadius: '50%', overflow: 'hidden', background: 'var(--bg-primary)' }}>
                 <img 
-                    src="https://api.dicebear.com/7.x/avataaars/svg?seed=Nayan&backgroundColor=b6e3f4" 
+                    src="/profile.jpeg" 
                     alt="Avatar" 
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
