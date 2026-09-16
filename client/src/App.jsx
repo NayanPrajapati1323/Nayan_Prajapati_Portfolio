@@ -1,38 +1,54 @@
-import React, { useEffect, useState } from 'react';
-import { ThemeProvider } from './context/ThemeContext';
+import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
-import TechStack from './components/TechStack';
-import Experience from './components/Experience';
 import Projects from './components/Projects';
+import Experience from './components/Experience';
+import TechStack from './components/TechStack';
 import Contact from './components/Contact';
+import WhatsAppWidget from './components/WhatsAppWidget';
 import Footer from './components/Footer';
 import ParticlesBackground from './components/ParticlesBackground';
-import FluidCursor from './components/FluidCursor';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
-    <ThemeProvider>
-      <div className="App">
-        <ParticlesBackground />
-        <FluidCursor />
+    <div className="App" style={{ minHeight: '100vh', position: 'relative', overflowX: 'hidden' }}>
+      {/* Background Interactive Particle Canvas */}
+      <ParticlesBackground />
 
-        <Header />
-        <main>
-          <Hero />
-          <About />
-          <TechStack />
-          <Experience />
-          <Projects />
-          <Contact />
-        </main>
-        <Footer />
-        <ToastContainer position="bottom-right" theme="colored" />
-      </div>
-    </ThemeProvider>
+      {/* Floating Header Navbar */}
+      <Header />
+
+      {/* Main Content Sections */}
+      <main style={{ position: 'relative', zIndex: 10 }}>
+        <Hero />
+        <About />
+        <Projects />
+        <Experience />
+        <TechStack />
+        <Contact />
+      </main>
+
+      {/* Floating WhatsApp Quick Connect Button */}
+      <WhatsAppWidget />
+
+      {/* Footer */}
+      <Footer />
+
+      {/* Toast Notifications */}
+      <ToastContainer
+        position="bottom-right"
+        theme="dark"
+        toastStyle={{
+          backgroundColor: '#0e0e14',
+          border: '1px solid rgba(168, 85, 247, 0.4)',
+          color: '#fff',
+          borderRadius: '14px'
+        }}
+      />
+    </div>
   );
 }
 

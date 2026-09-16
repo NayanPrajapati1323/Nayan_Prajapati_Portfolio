@@ -1,84 +1,147 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { SiJavascript, SiReact, SiNodedotjs, SiMongodb, SiExpress, SiHtml5, SiCss3, SiTailwindcss, SiGit, SiFigma, SiDocker, SiNextdotjs, SiPhp, SiLaravel, SiLivewire, SiMysql, SiGithub } from 'react-icons/si';
-
-import MatrixBackground from './MatrixBackground';
+import { portfolioData } from '../data/portfolioData';
 
 const TechStack = () => {
-  const techs = [
-    //   { name: 'Node.js', icon: <SiNodedotjs color="#339933" /> },
-    //   { name: 'Express', icon: <SiExpress color="var(--text-primary)" /> },
-    //   { name: 'MongoDB', icon: <SiMongodb color="#47A248" /> },
-    //   { name: 'Next.js', icon: <SiNextdotjs color="var(--text-primary)" /> },
-    { name: 'PHP', icon: <SiPhp color="#47A248" />},
-    { name: 'Laravel', icon: <SiLaravel color="#47A248" />},
-    { name: 'Livewire', icon: <SiLivewire color="#47A248" />},
-    { name: 'MySQL', icon: <SiMysql color="#47A248" />},
-    { name: 'HTML5', icon: <SiHtml5 color="#E34F26" /> },
-    { name: 'CSS3', icon: <SiCss3 color="#1572B6" /> },
-    { name: 'Tailwind', icon: <SiTailwindcss color="#06B6D4" /> },
-    { name: 'Github', icon: <SiGithub color="#F05032" /> },
-    { name: 'Docker', icon: <SiDocker color="#2496ED" /> },
-    { name: 'Figma', icon: <SiFigma color="#F24E1E" /> },
-    { name: 'JavaScript', icon: <SiJavascript color="#F7DF1E" /> },
-    { name: 'React', icon: <SiReact color="#61DAFB" /> },
+  const { skills } = portfolioData;
+
+  const allSkills = [
+    ...skills.backend,
+    ...skills.languages,
+    ...skills.database,
+    ...skills.versionControlAndTools,
+    ...skills.familiar
   ];
 
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 }
-  };
-
   return (
-    <section className="section" style={{ position: 'relative', background: 'var(--bg-secondary)', overflow: 'hidden' }}>
-      <MatrixBackground />
-      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+    <section id="skills" style={{ padding: '6rem 0', position: 'relative' }}>
+      <div className="container">
+        
+        {/* Section Header */}
         <motion.div
-           initial={{ opacity: 0, y: 20 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true }}
-           transition={{ duration: 0.5 }}
-           style={{ textAlign: 'center' }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          style={{ display: 'flex', alignItems: 'center', marginBottom: '3.5rem' }}
         >
-          <h2 className="title">My <span className="text-gradient">Tech Stack</span></h2>
-          <p style={{ color: 'var(--text-secondary)', marginBottom: '4rem', maxWidth: '600px', marginInline: 'auto' }}>
-            Technologies I've been working with recently.
-          </p>
+          <span
+            style={{
+              width: '40px',
+              height: '2px',
+              backgroundColor: 'var(--accent-cyan)',
+              marginRight: '1rem',
+              display: 'inline-block'
+            }}
+          />
+          <div>
+            <h2
+              style={{
+                fontSize: 'clamp(2rem, 3.5vw, 2.8rem)',
+                fontWeight: '900',
+                textTransform: 'uppercase',
+                fontStyle: 'italic',
+                color: 'var(--accent-cyan)'
+              }}
+            >
+              Pro Skills & Technologies
+            </h2>
+          </div>
         </motion.div>
 
-        <motion.div 
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="grid-auto-fit"
-          style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))', gap: '2rem' }}
+        {/* Skills Grid */}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))',
+            gap: '1.2rem'
+          }}
         >
-          {techs.map((tech, index) => (
-            <motion.div 
-              key={index} 
-              variants={item}
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              className="glass-card flex-center"
-              style={{ padding: '2rem 1rem', flexDirection: 'column', gap: '1rem', cursor: 'pointer' }}
+          {allSkills.map((skill, index) => (
+            <motion.div
+              key={skill.name + index}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.04 }}
+              className="glass-card"
+              style={{
+                padding: '1.2rem 1.4rem',
+                borderRadius: '18px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '1rem',
+                backgroundColor: 'rgba(255, 255, 255, 0.03)',
+                border: '1px solid rgba(6, 182, 212, 0.2)',
+                cursor: 'pointer',
+                transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'rgba(6, 182, 212, 0.08)';
+                e.currentTarget.style.borderColor = 'rgba(6, 182, 212, 0.6)';
+                e.currentTarget.style.transform = 'translateY(-4px) scale(1.02)';
+                e.currentTarget.style.boxShadow = '0 10px 25px rgba(6, 182, 212, 0.2)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.03)';
+                e.currentTarget.style.borderColor = 'rgba(6, 182, 212, 0.2)';
+                e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
             >
-              <div style={{ fontSize: '3rem' }}>
-                {tech.icon}
+              <div
+                style={{
+                  width: '32px',
+                  height: '32px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0
+                }}
+              >
+                <img
+                  src={skill.icon}
+                  alt={skill.name}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'contain'
+                  }}
+                />
               </div>
-              <span style={{ fontWeight: '600', fontSize: '0.9rem' }}>{tech.name}</span>
+
+              <div style={{ overflow: 'hidden' }}>
+                <h4
+                  style={{
+                    fontSize: '0.85rem',
+                    fontWeight: '800',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.04em',
+                    color: '#ffffff',
+                    margin: 0,
+                    whiteSpace: 'nowrap',
+                    textOverflow: 'ellipsis',
+                    overflow: 'hidden'
+                  }}
+                >
+                  {skill.name}
+                </h4>
+                <span
+                  style={{
+                    fontSize: '0.7rem',
+                    fontWeight: '600',
+                    color: 'var(--accent-cyan)',
+                    letterSpacing: '0.05em',
+                    textTransform: 'uppercase'
+                  }}
+                >
+                  {skill.level}
+                </span>
+              </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
+
       </div>
     </section>
   );
